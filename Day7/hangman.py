@@ -1,11 +1,20 @@
 import random
 from word_list import *
 from hangman_art import *
+import os
+
+def clear_console():
+    # for Windows
+    if os.name == 'nt':
+        os.system('cls')
+    # for Unix/Linux/MacOS
+    else:
+        os.system('clear')
 
 def play_hangman():
     chosen_word = random.choice(word_list)
 
-    num_of_letters= len(chosen_word)
+    num_of_letters = len(chosen_word)
 
     display = ['_'] * num_of_letters
     all_guesses = []
@@ -19,6 +28,7 @@ def play_hangman():
 
     while game_over == False:
         guess = input('Guess a letter: ').lower()
+        clear_console()
 
         if guess in all_guesses:
             print("You already chose this letter; chose another one.")
@@ -48,6 +58,7 @@ def play_hangman():
         elif '_' not in display:
             game_over = True
             print("You win!")
+
     play_again = input("Would you like again? (y/n): ").lower()
 
     if play_again == 'y':
