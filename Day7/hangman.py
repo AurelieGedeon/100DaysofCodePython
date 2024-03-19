@@ -22,4 +22,4 @@ while game_over == False:
     if '_' not in display:
         game_over = True
         print("You won!")
-print(display)
+print(f' '.join(display))
