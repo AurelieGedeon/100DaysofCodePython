@@ -8,8 +8,8 @@ def play_hangman():
     num_of_letters= len(chosen_word)
 
     display = ['_'] * num_of_letters
-    wrong_guesses = []
     all_guesses = []
+    wrong_guesses = []
 
     game_over = False
 
