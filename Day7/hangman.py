@@ -16,3 +16,5 @@ for position in range(num_of_letters):
     letter = chosen_word[position]
     if letter == guess:
         display[position] = letter
+
+print(display)
