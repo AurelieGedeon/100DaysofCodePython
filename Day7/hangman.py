@@ -61,14 +61,14 @@ word_list = ['aardvark', 'baboon', 'camel']
 
 chosen_word = random.choice(word_list)
 
-lives = 6
-
-num_of_letters = len(chosen_word)
-display = ['_'] * num_of_letters
-print(display)
-
 print(chosen_word)
+
+num_of_letters= len(chosen_word)
+
+display = ['_'] * num_of_letters
 game_over = False
+
+lives = 6
 
 while game_over == False:
     guess = input('Guess a letter: ').lower()
@@ -79,13 +79,14 @@ while game_over == False:
             display[position] = letter
     if guess not in chosen_word:
         lives -= 1
+        print(lives)
+    print(stages[lives])
+    print(f' '.join(display))
 
     if lives == 0:
         game_over = True
-        print("You lose!!")
+        print("You lose!") 
     elif '_' not in display:
         game_over = True
-        print("You won!")
-
-print(stages[lives])
-print(f' '.join(display))
+        print("You win!")
+    
