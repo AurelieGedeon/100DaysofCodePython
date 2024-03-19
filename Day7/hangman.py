@@ -8,6 +8,7 @@ print(chosen_word)
 
 guess = input('Guess a letter: ').lower()
 
-
-if guess in chosen_word:
-    print("huzzah!")
+for letter in chosen_word:
+    if letter == guess:
+        print("huzzah!")
+    
