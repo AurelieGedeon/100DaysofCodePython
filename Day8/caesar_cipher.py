@@ -19,5 +19,21 @@ def encrypt(plain_text, shift_amount):
         encrypted_message += encrypted_letter
     print(f"The encoded message is {encrypted_message}")
 
+def decrypt(plain_text, shift_amount):
+    decrypted_message = ""
+    for letter in plain_text:
+        letter_index = alphabet.index(letter)
+        decrypted_index = letter_index - shift_amount
+        if decrypted_index < 0:
+            new_decrypted_index = decrypted_index + alpha_index
+            decrypted_letter = alphabet[new_decrypted_index]
+        else:
+            decrypted_letter = alphabet[decrypted_index]
+        decrypted_message += decrypted_letter
 
-encrypt(text, shift)
+if direction == "encode":
+    encrypt(text, shift)
+else:
+    decrypt(text, shift)
+
+
