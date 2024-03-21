@@ -47,9 +47,9 @@ def play_hangman():
         all_guesses.append(guess)
         
         print(stages[lives])
+        print(f' '.join(display))
         print(f'All Guesses: {all_guesses}')
         print(f'Incorrect guesses: {wrong_guesses}')
-        print(f' '.join(display))
 
         if lives == 0:
             game_over = True
