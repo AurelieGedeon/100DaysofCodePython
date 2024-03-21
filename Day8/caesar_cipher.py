@@ -11,8 +11,10 @@ def encrypt(plain_text, shift_amount):
         letter_index = alphabet.index(letter)
         encrypted_index =  letter_index + shift_amount
         if encrypted_index > alpha_index:
-            new_encrypted_index = encrypted_index - alpha_index
+            new_encrypted_index = encrypted_index - (alpha_index + 1)
+            print(f"New encrypted index: {new_encrypted_index}")
             encrypted_letter = alphabet[new_encrypted_index]
+            print(f"Encrypted letter: {encrypted_letter}")
         else:
             encrypted_letter = alphabet[encrypted_index]
 
@@ -25,8 +27,10 @@ def decrypt(plain_text, shift_amount):
         letter_index = alphabet.index(letter)
         decrypted_index = letter_index - shift_amount
         if decrypted_index < 0:
-            new_decrypted_index = decrypted_index + alpha_index
+            new_decrypted_index = decrypted_index + (alpha_index + 1)
+            print(f"New decrypted index: {new_decrypted_index}")
             decrypted_letter = alphabet[new_decrypted_index]
+            print(f"decrypted letter: {decrypted_letter}")
         else:
             decrypted_letter = alphabet[decrypted_index]
         decrypted_message += decrypted_letter
