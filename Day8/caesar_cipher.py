@@ -6,12 +6,18 @@ shift = int(input("Type the shift number:\n"))
 
 def encrypt(plain_text, shift_amount):
     encrypted_message = ""
+    alpha_index = len(alphabet) - 1
     for letter in plain_text:
         letter_index = alphabet.index(letter)
         encrypted_index =  letter_index + shift_amount
-        encrypted_letter = alphabet[encrypted_index]
+        if encrypted_index > alpha_index:
+            new_encrypted_index = encrypted_index - alpha_index
+            encrypted_letter = alphabet[new_encrypted_index]
+        else:
+            encrypted_letter = alphabet[encrypted_index]
+
         encrypted_message += encrypted_letter
-    print(encrypted_message)
+    print(f"The encoded message is {encrypted_message}")
 
 
 encrypt(text, shift)
