@@ -12,11 +12,7 @@ def caesar(start_text, shift_amount, cipher_direction):
         shift_amount *= -1
     for letter in start_text:
         letter_index = alphabet.index(letter)
-        shifted_index = letter_index + shift_amount
-        if shifted_index > alpha_index:
-            shifted_index = shifted_index - alpha_length
-        elif shifted_index < 0:
-            shifted_index = shifted_index + alpha_length
+        shifted_index = (letter_index + shift_amount) % alpha_length
         new_letter = alphabet[shifted_index]
         end_text += new_letter
     print(f"The {direction}d message is {end_text}")
