@@ -30,6 +30,7 @@ def decrypt(plain_text, shift_amount):
         else:
             decrypted_letter = alphabet[decrypted_index]
         decrypted_message += decrypted_letter
+    print(f"The decoded message is {decrypted_message}")
 
 if direction == "encode":
     encrypt(text, shift)
