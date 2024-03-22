@@ -8,16 +8,16 @@ def caesar(start_text, shift_amount, cipher_direction):
     end_text = ""
     if cipher_direction == "decode":
         shift_amount *= -1
-    for letter in start_text:
-        if letter not in alphabet:
-            end_text += letter
+    for char in start_text:
+        if char not in alphabet:
+            end_text += char
         else:
-            letter_index = alphabet.index(letter)
+            letter_index = alphabet.index(char)
             shifted_index = (letter_index + shift_amount) % alpha_length
             new_letter = alphabet[shifted_index]
             end_text += new_letter
     print(f"The {direction}d message is {end_text}")
-    
+
 while cipher_over == False:
     print(logo)
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
