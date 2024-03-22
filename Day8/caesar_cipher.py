@@ -17,6 +17,7 @@ def caesar(start_text, shift_amount, cipher_direction):
             new_letter = alphabet[shifted_index]
             end_text += new_letter
     print(f"The {direction}d message is {end_text}")
+    
 while cipher_over == False:
     print(logo)
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
