@@ -29,6 +29,7 @@ while cipher_over == False:
     if end_cipher == "no":
         cipher_over = True
     elif end_cipher == "yes":
+        print("Goodbye!")
         cipher_over = False
 
 

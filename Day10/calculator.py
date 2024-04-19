@@ -1,26 +1,18 @@
 from calculator_art import *
 
-def add(n1, n2):
-    return n1 + n2
-
-def subtract(n1, n2):
-    return n1 - n2
-
-def multiply(n1, n2):
-    return n1 * n2
-
-def divide(n1, n2):
-    return n1 / n2
-
-operations = {
-    '+' : add,
-    '-' : subtract,
-    '*' : multiply,
-    '/' : divide
-}
+operations = ['+', '-', '*', '/']
 
 def calculate(n1, n2, operation):
     problem = f"{n1} {operation} {n2}"
     return eval(problem)
 
-print(calculate(7,3,'*'))
+num1 = int(input("What is the first number?: "))
+
+for operation in operations:
+    print(operation)
+
+num2 = int(input("What is the second number?: "))
+operation_symbol = input("Pick an operation from the choices above: ")
+
+answer = (calculate(num1, num2, operation_symbol))
+print(f'{num1} {operation_symbol} {num2} = {answer}')
